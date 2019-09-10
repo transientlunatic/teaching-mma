@@ -1,0 +1,8 @@
+#+TITLE: Multi-messenger astronomy and gravitational waves
+#+AUTHOR: Daniel Williams
+
+The notes and slides in this directory are for the multi-messenger GW astronomy lecture Scottish Universities Physics Alliance (SUPA) course on gravitational wave detection.
+
+* History
+
++ v0.01 :: Initial start at making some notes for this.
