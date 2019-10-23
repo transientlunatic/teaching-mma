@@ -3,6 +3,9 @@
 
 The notes and slides in this directory are for the multi-messenger GW astronomy lecture Scottish Universities Physics Alliance (SUPA) course on gravitational wave detection.
 
+The notes for the lecture are contained in the ~notes.org~ file, while ~document.tex~ contains the LaTeX template which is used to build the printable version of the notes.
+Running ~make pdf~ should build these out correctly to a pdf, though you'll need ~emacs~ installed on your system, along with some additional python packages I really ought to document.
+
 * History
 
 + v0.01 :: Initial start at making some notes for this.
