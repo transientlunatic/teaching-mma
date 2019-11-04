@@ -8,6 +8,7 @@ PRE =  $(TEX) -ini -job-name="preamble" "&pdflatex preamble.tex\dump"
 BASH = /bin/bash
 PANDOC = pandoc
 SUBBER = $(BASH) scripts/build/replace-abb.sh
+EMACS = emacs25
 
 BDIR = _build
 
@@ -15,7 +16,6 @@ ORG_FILES=$(wildcard *.org)
 ORG_BIB=$(wildcard *.org)
 INT_FILES=$(ORG_FILES:.org=.int_tex)
 TEX_FILES=$(ORG_FILES:.org=.tex)
-INT_BIBS=$(ORG_BIB:.org=.intbib)
 BIB_FILES=$(ORG_BIB:.org=.bib)
 #$(patsubst chapters/%.org,$(BDIR)/org/%.int_tex,$(ORG_FILES))
 #TEX_FILES=$(patsubst chapters/%.org,$(BDIR)/tex/%.tex,$(ORG_FILES))
@@ -36,7 +36,7 @@ html : $(HTML_FILES)
 
 pdf :	document.pdf ## Produce a PDF output
 
-document.pdf : document.tex git-info.tex glossary.tex $(BIB_FILES) $(TEX_FILES) #figures
+document.pdf : document.tex git-info.tex glossary.tex notes.bib notes.tex #figures
 	$(TEXMK) $<
 	biber document
 	$(TEXMK) $<
@@ -47,7 +47,7 @@ figures: scripts
 scripts:
 	cd scripts && $(MAKE)
 
-glossary: $(TEX_FILES) ## Convert the org table to a glossary
+glossary: glossary.tex
 
 git-info.tex :
 	git describe --tags --long --always --dirty='-*' 2>/dev/null > $@
@@ -55,18 +55,16 @@ git-info.tex :
 glossary.tex : notes.int_tex
 	python scripts/build/glossary.py $< > $@
 
-%.int_tex : %.org 
+notes.int_tex : notes.org 
 	@mkdir -p $(@D)
 	$(SUBBER) $< > $@
 
-%.tex : %.int_tex
-	emacs $< -Q --batch --eval "(require 'org)" --eval "(setq org-latex-caption-above nil)" --eval "(setq org-latex-prefer-user-labels t)"  --eval "(org-latex-export-to-latex nil nil nil t)"  --kill
+notes.tex : notes.int_tex
+	$(EMACS) $< -Q --batch --eval "(require 'org)" --eval "(setq org-latex-caption-above nil)" --eval "(setq org-latex-prefer-user-labels t)"  --eval "(org-latex-export-to-latex nil nil nil t)"  --kill
 
-%.intbib : %.org
-	$(SUBBER) $< > $@
-%.bib : %.org
+notes.bib : notes.org
 	echo "Producing $@ at $(notdir $@)"
-	emacs $< -Q --batch --eval "(require 'org-bibtex)"   --eval '(org-bibtex "$(notdir $@)")' --kill
+	$(EMACS) $< -Q --batch --eval "(require 'org-bibtex)"   --eval '(org-bibtex "$(notdir $@)")' --kill
 
 $(HTML_FILES) : $(ORG_FILES)
 	@mkdir -p $(@D)	
