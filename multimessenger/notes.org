@@ -29,7 +29,7 @@ A number of transient sources are considered as promising targets for abbr:mma a
 \end{tabular}
 
 abbr:bbh events are not generally anticipated to be promising sources for abbr:em emission, despite being the most frequently observed source of abpl:gw, and the result of the most energetic events in the observed universe.
-There has, however, been speculation that under certain circumstances abbr:em emission could be produced as a result of a abbr:bbh coalescence cite:2016ApJ...819L..21L, partly driven by the apparent observation of gamma rays around \SI{0.4}{\second} following the abbr:gw signal from GW150914 cite:2016ApJ...826L...6C [fn:gw150914em].
+There has, however, been speculation that under certain circumstances abbr:em emission could be produced as a result of a abbr:bbh coalescence cite:2016ApJ...819L..21L,2017ApJ...839L...7D, partly driven by the apparent observation of gamma rays around \SI{0.4}{\second} following the abbr:gw signal from GW150914 cite:2016ApJ...826L...6C [fn:gw150914em].
 
 [fn:gw150914em] Though it's generally accepted that this was a coincidence, as no abbr:bbh event following this one has been coincident with an abbr:em event, and the poor localisation of the GW150914 signal provides little evidence that the two events were spatially coincident.
 
@@ -77,7 +77,7 @@ No cosmic rays from this source have been observed, however.
 
 Pulsars are neutron stars which produce a relativistic jet which can be observed in radio.
 Neutron stars are known to be extremely spherical, however any ellipticity or irregularities in the shape (like mountains) will result in the star having a quadrupole moment, and therefore producing abpl:gw as it rotates.
-To date no abpl:gw from pulsars have been observed, and this allows an upper limit to be placed on the size of any mountains on the surface of nearby pulsars (as of O2 the largest mountain would be around $\SI{5}{\centi\meter}$ cite:2019PhRvD..99l2002A [fn:mountain-earthscale]).
+To date no abpl:gw from pulsars have been observed, and this allows an upper limit to be placed on the size of any mountains on the surface of nearby pulsars (as of O2 the largest mountain would be around $\SI{5}{\centi\meter}$ \cite{2019PhRvD..99l2002A} [fn:mountain-earthscale]).
 
 [fn:mountain-earthscale] If the Earth was equivalently spherical the highest mountains would be around $\SI{25}{\meter}$ high.
 
@@ -204,14 +204,50 @@ Each tile is then prioritised using probability information from the abbr:gw ana
 * GW170817: A case-study
 \label{sec:gw170817}
 
-Outline of the events of GW170817.
+\begin{figure*}
+\includegraphics[width=\textwidth]{figures/gw170817-localisation.pdf}
+\caption{The sky localisation for GW170817. The localisation region from the two LIGO detectors is shown in light green, and from the LIGO and Virgo network in dark green.
+The light blue band is the localisation derived from the time delay between the Fermi and INTEGRAL observations of the abbr:sgrb, GW 170817A. The images on the right are the first optical observation by Swope [top], and an image of the same galaxy taken 21 days prior to the event by the DLT40 survey. This figure is reproduced from figure 1 of~\cite{2017ApJ...848L..12A}.
+} \label{fig:gw170817-localisation}
+\end{figure*}
+
+On 17 August 2017, during the second observing run of advanced LIGO, and a few days after advanced Virgo had started making observations a abbr:gw signal, GW170817, was detected by both LIGO detectors and the Virgo detector.
+In contrast to previous abbr:gw detections which had all been abbr:bbh signals, GW170817 was identified as being produced by a abbr:bns system.
+
+Independently of the abbr:gw detection the Fermi and INTEGRAL satellites detected a abbr:sgrb slightly less than two seconds after the time the abbr:bns was detected in abpl:gw.
+GCN alerts were issued rapidly for both the Fermi abbr:sgrb detection (within 14 seconds) and the LIGO/Virgo abbr:gw detection (within 40 minutes).
+
+
+
+The (recently-expanded) three detector abbr:gw network initially localised the signal to within 31 square degrees in the southern celestial hemisphere, however later analysis allowed this to be reduced to a 28 square degree patch of sky.
+The localisation areas from the various detections are shown in figure ref:fig:gw170817-localisation for the abbr:gw detections in green and the abbr:sgrb detections in blue.
+
+The three-detector localisation was calculated by around 17:54 UTC, which allowed telescopes in South America to search the localisation area for an optical transient [fn:sun].
+The Swope supernova survey was the first collaboration to observe the transient cite:2017ApJ...848L..12A,2017Sci...358.1556C (although six observatories would independently discover the optical counterpart cite:2017ApJ...848L..12A).
+The optical counterpart was observed in NGC 4993.
+
+The highly-precise localisation which was produced by imaging the optical counterpart allowed observations to be made across the entire abbr:em spectrum.
+
+Ultraviolet emission was detected 15.3 hours after the event by Swift, and 9 days later X-ray emission was detected by the Chandra X-ray Observatory. 
+16 days after the abbr:bns was observed radio emission was observed by the VLA in New Mexico.
+
+abbr:em observations continued until 2019, with the Hubble Space Telescope unable to detect any optical afterglow after 584 days cite:2019ApJ...883L...1F.
+Superluminal radio emission was also reported cite:2018Natur.561..355M between 75 and 230 days after the abbr:bns merger.
+
+
+
+A timeline of the various GCN notices and circulars is given in figure ref:fig:170817-gcn.
+
+[fn:sun] The search was complicated by the proximity of the search region to the sun, which meant observations were only possible shortly after the onset of twilight for optical telescopes.
 
 \begin{figure*}
 \includegraphics[width=\pagewidth]{figures/gw170817-gcn-timeline.pdf}
+\caption{The timeline of GCN notices from GW170817 and its assosciated electromagnetic events.
+Reproduced from figure 2 of~\cite{2017ApJ...848L..12A}.
+\label{fig:170817-gcn}
+} 
 \end{figure*}
 
-+ mma paper cite:2017ApJ...848L..12A
-+ superluminal radio cite:2018Natur.561..355M
 
 * Astrophysics from multi-messenger astronomy
 
@@ -989,5 +1025,47 @@ Recent and archival notices and circulars can be viewed at \url{https://gcn.gsfc
    :EPRINT:   1907.01443
    :PRIMARYCLASS: astro-ph.HE
    :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019arXiv190701443T
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** The Optical Afterglow of GW170817: An Off-axis Structured Jet and Deep Constraints on a Globular Cluster Origin
+   :PROPERTIES:
+   :TITLE:    The Optical Afterglow of GW170817: An Off-axis Structured Jet and Deep Constraints on a Globular Cluster Origin
+   :BTYPE:    article
+   :CUSTOM_ID: 2019ApJ...883L...1F
+   :AUTHOR:   {Fong}, W. and {Blanchard}, P.~K. and {Alexander}, K.~D. and {Strader}, J. and {Margutti}, R. and {Hajela}, A. and {Villar}, V.~A. and {Wu}, Y. and {Ye}, C.~S. and {Berger}, E. and {Chornock}, R. and {Coppejans}, D. and {Cowperthwaite}, P.~S. and {Eftekhari}, T. and {Giannios}, D. and {Guidorzi}, C. and {Kathirgamaraju}, A. and {Laskar}, T. and {Macfadyen}, A. and {Metzger}, B.~D. and {Nicholl}, M. and {Paterson}, K. and {Terreran}, G. and {Sand}, D.~J. and {Sironi}, L. and {Williams}, P.~K.~G. and {Xie}, X. and {Zrake}, J.
+   :JOURNAL:  \apjl
+   :KEYWORDS: Neutron stars, Gravitational waves, Gamma-ray bursts, Hubble Space Telescope, Astrophysics - High Energy Astrophysical Phenomena
+   :YEAR:     2019
+   :MONTH:    Sep
+   :VOLUME:   883
+   :NUMBER:   1
+   :EID:      L1
+   :PAGES:    L1
+   :DOI:      10.3847/2041-8213/ab3d9e
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1908.08046
+   :PRIMARYCLASS: astro-ph.HE
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2019ApJ...883L...1F
+   :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
+   :END:
+** Electromagnetic Signals Following Stellar-mass Black Hole Mergers
+   :PROPERTIES:
+   :TITLE:    Electromagnetic Signals Following Stellar-mass Black Hole Mergers
+   :BTYPE:    article
+   :CUSTOM_ID: 2017ApJ...839L...7D
+   :AUTHOR:   {de Mink}, S.~E. and {King}, A.
+   :JOURNAL:  \apjl
+   :KEYWORDS: binaries: close, black hole physics, gravitational waves, X-rays: general, Astrophysics - High Energy Astrophysical Phenomena
+   :YEAR:     2017
+   :MONTH:    Apr
+   :VOLUME:   839
+   :NUMBER:   1
+   :EID:      L7
+   :PAGES:    L7
+   :DOI:      10.3847/2041-8213/aa67f3
+   :ARCHIVEPREFIX: arXiv
+   :EPRINT:   1703.07794
+   :PRIMARYCLASS: astro-ph.HE
+   :ADSURL:   https://ui.adsabs.harvard.edu/abs/2017ApJ...839L...7D
    :ADSNOTE:  Provided by the SAO/NASA Astrophysics Data System
    :END:
