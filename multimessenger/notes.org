@@ -1,6 +1,10 @@
-/These notes accompany the "Multimessenger Astronomy" lecture from the *Gravitational Wave Detection* (PHYS 5006) course, taught at the University of Glasgow in the Autumn term, 2019. You shouldn't consider these notes comprehensive: the field of multimessenger astronomy is developing rapidly.  The bibliography of these notes could be a useful starting-point for a more comprehensive exploration of the literature, however./
+\begin{abstract}
+These notes accompany the "Multimessenger Astronomy" lecture from the \emph{Gravitational Wave Detection} (PHYS 5006) course, taught at the University of Glasgow in the Autumn term, 2019. You shouldn't consider these notes comprehensive: the field of multimessenger astronomy is developing rapidly.  The bibliography of these notes could be a useful starting-point for a more comprehensive exploration of the literature, however.
+\end{abstract}
 
-The advent of the first binary neutron star observation, gls:GW170817 cite:2017PhRvL.119p1101A, to be observed by abbr:gw detectors served as the advent of a new era in observational astrophysics, with abbr:gw now able to sit alongside conventional electromagnetic observations to probe the astrophysical nature of some of the most extreme events in the universe.
+
+
+The advent of the first binary neutron star observation, GW170817 cite:2017PhRvL.119p1101A, to be observed by abbr:gw detectors served as the advent of a new era in observational astrophysics, with abbr:gw now able to sit alongside conventional electromagnetic observations to probe the astrophysical nature of some of the most extreme events in the universe.
 
 When the same astrophysical object or event is observed through multiple different observational approaches, or /messengers/ the event is deemed to be a abbr:mma event.
 There are four messengers of which observations are currently made: abbr:em radiation, abpl:gw, abpl:hen, and cosmic rays [fn:heliosphere].
@@ -9,7 +13,7 @@ There are four messengers of which observations are currently made: abbr:em radi
 
 * Multimessenger astronomy: A very brief history
 
-While the discovery of gls:GW170817 marked the beginning of abbr:mma with abpl:gw, it did not mark the beginning of abbr:mma as a field.
+While the discovery of GW170817 marked the beginning of abbr:mma with abpl:gw, it did not mark the beginning of abbr:mma as a field.
 The earliest abbr:mma observations can be traced to astroparticle observations of the solar flares in the 1940s cite:2015paas.book.....S.
 The observation of SN1987A, a type-II supernova in the Large Magellanic Cloud, was made first in visible light at Las Campanas, but also later in ultraviolet. Around three hours prior to the event's detection in abbr:em, a number of abbr:hen observatories detected a burst of antineutrinos (with around 25 particles observed across three observatories).
 The first detection of gravitational waves was made in 2015, with the observation of a abbr:bbh coalescence, and just under two years later the first observation of abpl:gw from a abbr:bns coalescence was made, which coincided with a abbr:sgrb observed by the Fermi satellite. 
@@ -207,9 +211,10 @@ Each tile is then prioritised using probability information from the abbr:gw ana
 \begin{figure*}
 \includegraphics[width=\textwidth]{figures/gw170817-localisation.pdf}
 \caption{The sky localisation for GW170817. The localisation region from the two LIGO detectors is shown in light green, and from the LIGO and Virgo network in dark green.
-The light blue band is the localisation derived from the time delay between the Fermi and INTEGRAL observations of the abbr:sgrb, GW 170817A. The images on the right are the first optical observation by Swope [top], and an image of the same galaxy taken 21 days prior to the event by the DLT40 survey. This figure is reproduced from figure 1 of~\cite{2017ApJ...848L..12A}.
-} \label{fig:gw170817-localisation}
+The light blue band is the localisation derived from the time delay between the Fermi and INTEGRAL observations of the \gls{sgrb}, GW 170817A. The images on the right are the first optical observation by Swope [top], and an image of the same galaxy taken 21 days prior to the event by the DLT40 survey. This figure is reproduced from figure 1 of~\cite{2017ApJ...848L..12A}.
+ \label{fig:gw170817-localisation}}
 \end{figure*}
+
 
 On 17 August 2017, during the second observing run of advanced LIGO, and a few days after advanced Virgo had started making observations a abbr:gw signal, GW170817, was detected by both LIGO detectors and the Virgo detector.
 In contrast to previous abbr:gw detections which had all been abbr:bbh signals, GW170817 was identified as being produced by a abbr:bns system.
@@ -241,7 +246,7 @@ A timeline of the various GCN notices and circulars is given in figure ref:fig:1
 [fn:sun] The search was complicated by the proximity of the search region to the sun, which meant observations were only possible shortly after the onset of twilight for optical telescopes.
 
 \begin{figure*}
-\includegraphics[width=\pagewidth]{figures/gw170817-gcn-timeline.pdf}
+\includegraphics[width=\textwidth]{figures/gw170817-gcn-timeline.pdf}
 \caption{The timeline of GCN notices from GW170817 and its assosciated electromagnetic events.
 Reproduced from figure 2 of~\cite{2017ApJ...848L..12A}.
 \label{fig:170817-gcn}
@@ -263,7 +268,7 @@ v = H_{0} d
 
 if we know both $v$ and $d$ we can infer $H_{0}$.
 
-The distance to the source of GW170817 inferred from the abpl:gw is $d = \SI{48.8^{+2.9}_{-6.9}}{\mega\parsec}$, and the measured recession velocity is $v = \SI{3017\pm166}{\kilo\meter\ \second^{-1}}$.
+The distance to the source of GW170817 inferred from the abpl:gw is $d = \SI[parse-numbers=false]{48.8^{+2.9}_{-6.9}}{\mega\parsec}$, and the measured recession velocity is $v = \SI{3017\pm166}{\kilo\meter\ \second^{-1}}$.
 
 This allowed $H_{0}$ to be inferred to be $\SI[parse-numbers=false]{70.0^{+12.0}_{-8.0}}{\kilo\meter\ \second^{-1}\ \mega\parsec^{-1}}$ \cite{2017Natur.551...85A}.
 
@@ -280,7 +285,7 @@ This means that abbr:bbh events can be used, which are much more frequently obse
 In order to make inferences without knowing which galaxy the event occurred in we need accurate three-dimensional galaxy catalogues.
 By identifying a list of galaxies which lie within the localised volume (through the sky localisation and distance estimate of the abbr:gw) we can use a Bayesian analysis to combine the inferences from each plausible galaxy to give an overall estimate cite:2019arXiv190806050G,2019arXiv190806060T.
 
-From the first two observation runs' detections it is possible to update the GW170817-only estimate of $H_{0}$ to $\si[parse-numbers=false]{68.0^{+14.0}_{-7.0}}{\kilo\meter\ \second^{-1}\  \mega\parsec^{-1}}$ \cite{2019arXiv190806060T}.
+From the first two observation runs' detections it is possible to update the GW170817-only estimate of $H_{0}$ to $\SI[parse-numbers=false]{68.0^{+14.0}_{-7.0}}{\kilo\meter\ \second^{-1}\  \mega\parsec^{-1}}$ \cite{2019arXiv190806060T}.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/H0-statistical}
@@ -327,7 +332,7 @@ where $\chirpmass$ is the gls:chirp-mass.
 For a abbr:bns system the gls:chirp-mass will be around $\SI{1.25}{\solMass}$.
 
 \begin{figure}
-\includegraphics{figures/inspiral-time}
+\includegraphics[width=\textwidth]{figures/inspiral-time}
 \caption{Inspiral time}
 \label{fig:cbc:inspiral-time}
 \end{figure}
