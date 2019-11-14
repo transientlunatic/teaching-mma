@@ -107,6 +107,7 @@ description={{{e[description]}}}
 
     for entry in entries:
         if ("name" in entry) and ("description" in entry):
+            if len(entry['description'])==0: continue
             output = fmt.format(gloss_entry, name=entry['name'].lower().replace(" ", "-"), e=entry)
             output.replace("\\n", " ")
             print(output)

@@ -1,0 +1,74 @@
+\documentclass[nobib]{tufte-handout}
+\usepackage[utf8]{inputenc}
+\makeatletter
+\input{journal-macros}
+\makeatother
+\usepackage{lipsum}
+\usepackage[acronym,toc,nopostdot,xindy,style=index]{glossaries} %previously index
+\usepackage{siunitx}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{tensor}
+\usepackage{etoolbox}
+\makeglossaries
+\usepackage{tabularx}
+% \usepackage{type1cm}
+%\usepackage{lettrine}
+%\usepackage{physicsplus}
+%\usepackage{caption}
+\usepackage{pgfplots}
+\usepackage{rotating}
+%\usepackage{pgfgantt}
+\usepackage{environ}
+\usepackage{setspace}
+
+\usepackage{pdflscape}
+
+\usetikzlibrary{bayesnet}
+
+\usepackage{doi}
+
+\usepackage[
+  backend=biber,
+  sorting=none,
+  citestyle=numeric,
+  autocite=footnote,
+]{biblatex}
+\addbibresource{notes.bib}
+%
+
+% \linespread{1.5}
+
+\title{Multi-messenger astronomy with gravitational waves}
+\author{Daniel Williams}
+
+% The glossary
+\loadglsentries[main]{glossary}
+\makeglossaries
+
+
+%\input{title}
+
+
+\begin{document}
+
+\maketitle
+
+% \marginnote{
+% Copyright 2019 Daniel Williams, all rights reserved.\\
+% This document has been assigned the identifier LIGO-P19##### by the LIGO Document Control Center.
+% }
+
+\marginnote{\printglossary[type=\acronymtype]}
+\linespread{1.5}
+\input{notes}
+\linespread{1.0}
+
+% % The glossary
+% \glsaddall
+\printglossary
+
+\medskip
+\printbibliography[title={Bibliography}]
+
+\end{document}

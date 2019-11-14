@@ -18,7 +18,7 @@ The earliest abbr:mma observations can be traced to astroparticle observations o
 The observation of SN1987A, a type-II supernova in the Large Magellanic Cloud, was made first in visible light at Las Campanas, but also later in ultraviolet. Around three hours prior to the event's detection in abbr:em, a number of abbr:hen observatories detected a burst of antineutrinos (with around 25 particles observed across three observatories).
 The first detection of gravitational waves was made in 2015, with the observation of a abbr:bbh coalescence, and just under two years later the first observation of abpl:gw from a abbr:bns coalescence was made, which coincided with a abbr:sgrb observed by the Fermi satellite. 
 An extensive observing campaign was launched as a result of these observations, with observatories covering the entire abbr:em spectrum making observations of the event. 
-These will be discussed in detail in section ref:sec:gw170817.
+These will be discussed in detail in the section discussing GW170817.
 
 
 * Multimessenger astrophysical sources
@@ -27,6 +27,8 @@ The anticipated sources of gravitational wave signals fall into two broad catego
 A number of transient sources are considered as promising targets for abbr:mma astronomy, and these are often referred to as /abbr:em bright/.
 
 ** Black hole coalescences
+
+\marginpar{
 \begin{tabular}{cccc}
  EM  & GW   & HEN & CR \\
  No  & Yes  & No  & No
@@ -44,7 +46,7 @@ There has, however, been speculation that under certain circumstances abbr:em em
  Yes  & Yes  & ?   & No
 \end{tabular}
 
-In contrast to abbr:bbh coalescences, abbr:bns mergers are expected to produce large quantities of abbr:em radiation. These have long been assumed to be the source of abpl:sgrb, and the observation of GW170817 (see section ref:sec:gw170817) provided strong confirmation that they are the engine for at least a subset of observed abpl:sgrb.
+In contrast to abbr:bbh coalescences, abbr:bns mergers are expected to produce large quantities of abbr:em radiation. These have long been assumed to be the source of abpl:sgrb, and the observation of GW170817 provided strong confirmation that they are the engine for at least a subset of observed abpl:sgrb.
 
  - abbr:sgrb :: The initial abbr:em emission is expected to be from high-energy, collimated gamma rays from the initial fireball.
  - kilonova :: UV through IR emission from nuclear processes in the ejecta cite:2010MNRAS.406.2650M.
@@ -97,33 +99,37 @@ If a network of at least two geographically separated detectors observes a signa
 For a detector at a position, $\vec{r}_{D}$, and an arbitrary reference location, $\vec{r}_{0}$, this time delay, $\delta t$, will be
 \begin{equation}
 \label{eq:intro:detectors:timedelay}
-\delta t (\hat{\vec{\Omega}}) = \frac{1}{c} (\vec{r}_{0} - \vec{r}_{D}) \cdot \hat{\vec{\Omega}}
+\delta t (\hat{\vec{\Omega}}) = \frac{1}{c} (\vec{r}_{0} - \vec{r}_{D}) \cdot \hat{\vec{\Omega}}.
 \end{equation}
 This allows the location of the signal to be confined to a ring on the sky corresponding to constant $\Delta t$.
+Examples of these rings for a abbr:gw source are plotted in figure ref:fig:det:advanced-timing.
 Timing uncertainty in the signal, which arises both from clock uncertainties and uncertainties in defining a reference point in the received signal increase the area of this region.
 As more detectors are added to the network it is possible to reduce this area, as increasing the number of detector pairs works to reduce the sky area compatible with the observed delay times.
 
 \begin{figure}
 \includegraphics{figures/timing-circles}
-\caption{Isochrones for the three detector pairs in the advanced network.}
+\caption{Isochrones for the three detector pairs in the advanced network. 
+For a single detector pair the localisation is a ring; with three detectors there are three pairs of detectors, and so three rings, and we can reduce the plausible locations the signal could have come from to the two places where all of the rings overlap.
+}
 \label{fig:det:advanced-timing}
 \end{figure}
 
 Additional localisation information can be attained from the observed amplitude of the signal in each detector.
-The signal will be convolved with the antenna pattern (see section ??); as each detector is insensitive to some regions of the sky, the total plausible localisation of the signal is reduced.
+The signal will be convolved with the antenna pattern (see figure ref:fig:det:aligo-antenna); as each detector is insensitive to some regions of the sky, the total plausible localisation of the signal is reduced.
 
 For a abbr:gw approaching the detector from an azimuth (relative to one of the arms) and altitude (relative to the plane of the detector), $(\alpha, \delta)$ on the sky these patterns for the $+$- and $\times$-polarisations, $F_{+}$ and $F_{\times}$, will be 
 \begin{subequations}
 \begin{align}
 \label{eq:detectors:antennapattern:plus}
 F_{+} &= \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\alpha \cos 2\psi - \sin\delta\sin 2 \alpha \sin 2 \psi \\
-F_{\times} &=  \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\phi \sin 2\psi - \sin\delta\sin 2 \phi \cos 2 \psi 
+F_{\times} &=  \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\phi \sin 2\psi - \sin\delta\sin 2 \phi \cos 2 \psi.
 \end{align}
 \end{subequations}
+where $\phi$ is the polarisation angle of the abbr:gw.
 
 \begin{figure}
 \includegraphics{figures/aligo-antenna-pattern}
-\caption{Antenna pattern of aLIGO}
+\caption{Antenna pattern of an aLIGO detector, normalised so that the locations which the detection is most sensitive to are labelled $1$, and those it is insensitive to are labelled $0$. }
 \label{fig:det:aligo-antenna}
 \end{figure}
 
@@ -164,11 +170,15 @@ where $M$ is the total mass of the binary.
 For a abbr:bbh similar to GW150914, where $M \approx 70\,\solMass$ we find that $R = \SI{350}{\kilo\meter}$: this is small in comparison to the normal diameters of stars, but it's a little difficult to see the implications of this for compact objects.
 
 To help with this we introduce the compactness ratio, $\mathcal{R}$, which is the ratio of $R$ to the Schwarzchild radius, which is the smallest possible radius of a compact object.
+
+\begin{equation}
+r = \frac{2Gm}{c^{2}} \approx 2.95 \left( \frac{m}{\solMass} \right) \,\text{km}
+\end{equation}
+
 In the GW150914-like case above $\mathcal{R} \approx 1.7$, since the Schwarzchild radius of the individual objects is $\SI{103}{\kilo\meter}$.
 For a abbr:bns system we expect $\mathcal{R}$ between around $2$ and $5$.
 
 [fn:basic-physics-spin] For a fuller discussion of the effects of spin and the orbit on the determination of the orbital compactness see section 4 of cite:2017AnP...52900209A.
-
 
 * Transient astronomy
 ** Gamma-ray burst observatories
@@ -189,7 +199,7 @@ The timing of this mission's launch would mean that both THESEUS and gls:lisa wo
    A current example of such a survey telescope is the abbr:ztf cite:2014htu..conf...27B, which is capable of imaging a 47 square degree area of the sky in a single exposure, allowing the entire Northern hemisphere sky to be imaged every three nights, to a limiting magnitude around 20.5. 
    The abbr:ztf produces large quantities of data every night, but this will be dwarfed by the quantity of data produced by the abbr:lsst.
    This facility, which has been designed specifically for rapid all-sky surveys (compared to abbr:ztf, which is an instrument placed on an exisiting telescope) will produce around ten times more data, around 15 terabytes per night, proving a formidable challenge to both data processing and analysis.
-   Other important programmes in transient astronomy include the One-Meter Two-Hemisphere collaboration (comprising the Swope Supernova Survey in Chile, and the Nickel Telescope in California) who were the first to discover the optical counterpart to gls:gw170817 cite:2017Sci...358.1556C (see section ref:sec:gw170817 for more discussion of this), and on a somewhat longer timescale, ESA's \emph{Gaia} mission cite:2019IAUS..339...12B.
+   Other important programmes in transient astronomy include the One-Meter Two-Hemisphere collaboration (comprising the Swope Supernova Survey in Chile, and the Nickel Telescope in California) who were the first to discover the optical counterpart to GW170817 cite:2017Sci...358.1556C, and on a somewhat longer timescale, ESA's \emph{Gaia} mission cite:2019IAUS..339...12B.
 
 
 * Challenges for GW event follow-up
@@ -240,18 +250,15 @@ abbr:em observations continued until 2019, with the Hubble Space Telescope unabl
 Superluminal radio emission was also reported cite:2018Natur.561..355M between 75 and 230 days after the abbr:bns merger.
 
 
-
-A timeline of the various GCN notices and circulars is given in figure ref:fig:170817-gcn.
-
 [fn:sun] The search was complicated by the proximity of the search region to the sun, which meant observations were only possible shortly after the onset of twilight for optical telescopes.
 
-\begin{figure*}
-\includegraphics[width=\textwidth]{figures/gw170817-gcn-timeline.pdf}
-\caption{The timeline of GCN notices from GW170817 and its assosciated electromagnetic events.
-Reproduced from figure 2 of~\cite{2017ApJ...848L..12A}.
-\label{fig:170817-gcn}
-} 
-\end{figure*}
+# \begin{figure*}
+# \includegraphics[width=\textwidth]{figures/gw170817-gcn-timeline.pdf}
+# \caption{The timeline of GCN notices from GW170817 and its assosciated electromagnetic events.
+# Reproduced from figure 2 of~\cite{2017ApJ...848L..12A}.
+# \label{fig:170817-gcn}
+# } 
+# \end{figure*}
 
 * Cosmology from multimessenger astronomy
 
@@ -333,12 +340,12 @@ For a abbr:bns system the gls:chirp-mass will be around $\SI{1.25}{\solMass}$.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figures/inspiral-time}
-\caption{Inspiral time}
+\caption{The physical time until coalescence for an inspiralling binary system, given a chirp mass ($y$-axis), for the system, and a signal frequency ($x$-axis).}
 \label{fig:cbc:inspiral-time}
 \end{figure}
 
-** Exercise
-   Advanced LIGO can detect signals at a frequency around as low as $\SI{10}{\hertz}$, however the third generation Einstein Telescope will be able to make observations down to around $\SI{1}{\hertz}$. What is the increase in observation time achieved between the two detectors for a abbr:bns system?
+# ** Exercise
+#    Advanced LIGO can detect signals at a frequency around as low as $\SI{10}{\hertz}$, however the third generation Einstein Telescope will be able to make observations down to around $\SI{1}{\hertz}$. What is the increase in observation time achieved between the two detectors for a abbr:bns system?
 
 
 
@@ -351,21 +358,25 @@ The amount of advance warning will depend on the strength of the abbr:bns signal
    :PROPERTIES:
    :ABBR:     AGN
    :END:
+   A compact region at the centre of a galaxy which is producing electromagnetic radiation through processes which are not associated with normal stellar radiation processes. 
 ** binary black hole
    :PROPERTIES:
    :ABBR: BBH
    :ABBRPL: BBHs
    :END:
+   A pair of black holes which are in a captured binary orbit of each other. In General Relativity all orbits are unstable, will inspiral, and eventually the black holes will coalesce. This term is normally used of black holes late in the decay of the orbit.
 ** compact binary coalescence
    :PROPERTIES:
    :ABBR: CBC
    :ABBRPL: CBCs
    :END:
+   A pair of compact objects (for example neutron stars or black holes) which are inspiralling, and will eventually merge and coalesce, producing gravitational waves.
 ** binary neutron star
    :PROPERTIES:
    :ABBR: BNS
    :ABBRPL: BNSs
    :END:
+   See \gls{binary-black-hole}, however here the objects are neutron stars rather than black holes.
 ** chirp mass
    :PROPERTIES:
    :SYMBOL:   $\mathcal{M}$
@@ -379,14 +390,25 @@ The amount of advance warning will depend on the strength of the abbr:bns signal
    :PROPERTIES:
    :ABBR:     CW
    :END:
+   A category of \gls{gw} signal which is generated by an ongoing process, rather than from a transient burst of energy.
 ** short gamma-ray burst
    :PROPERTIES:
    :ABBR:     sGRB
    :END:
+   Short-duration GRBs were long-suspected to be the electromagnetic
+   signature of compact binary coalesence events, and the observation
+   of GW170817 in 2017, a binary neutron star coalesence event, and
+   its associated gamma ray burst, GRB170817A cemented these CBC
+   events as the progenitor of at least some fraction of sGRBs.
 ** gamma-ray burst
    :PROPERTIES:
    :ABBR:     GRB
    :END:
+   Gamma ray bursts are extremely energetic cosmological events which
+   are observed to occur around once per day, and appear to be derived
+   from at least two separate populations, divided by their duration
+   and spectral hardness, although there is overlap and ambiguity
+   between the two populations.
 ** gravitational wave
    :PROPERTIES:
    :ABBR:     GW
@@ -400,18 +422,11 @@ The amount of advance warning will depend on the strength of the abbr:bns signal
    :ABBR:     GBM
    :END:
 
-** maximum a posteriori estimate
-   :PROPERTIES:
-   :ABBREVIATION: MAP
-   :PLURALABB: MAPs
-   :END:
-   An estimate of the value of a parameter which is equal to the mode of the posterior distribution.
-   Frequently used as a point estimate for parameters.
-
 ** multimessenger astronomy
    :PROPERTIES:
    :ABBR:     MMA
    :END:
+   A field of observational astronomy in which observations are made through at least two "messengers", which are each different sources of radiated information, for example electromagnetic radiation and emitted particles.
 ** electromagnetic 
    :PROPERTIES:
    :ABBR:     EM
