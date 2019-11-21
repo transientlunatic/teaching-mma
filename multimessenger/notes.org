@@ -28,7 +28,6 @@ A number of transient sources are considered as promising targets for abbr:mma a
 
 ** Black hole coalescences
 
-\marginpar{
 \begin{tabular}{cccc}
  EM  & GW   & HEN & CR \\
  No  & Yes  & No  & No
@@ -122,7 +121,7 @@ For a abbr:gw approaching the detector from an azimuth (relative to one of the a
 \begin{align}
 \label{eq:detectors:antennapattern:plus}
 F_{+} &= \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\alpha \cos 2\psi - \sin\delta\sin 2 \alpha \sin 2 \psi \\
-F_{\times} &=  \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\phi \sin 2\psi - \sin\delta\sin 2 \phi \cos 2 \psi.
+F_{\times} &=  \frac{1}{2} (1 + \sin^{2}\delta) \cos 2\alpha \sin 2\psi - \sin\delta\sin 2 \alpha \cos 2 \psi.
 \end{align}
 \end{subequations}
 where $\phi$ is the polarisation angle of the abbr:gw.
@@ -163,7 +162,7 @@ This can be determined by measuring the frequency of the orbit immediately prior
 The orbital separation, $R$ of the objects in the binary is 
 \begin{equation}
 \label{eq:oribital-separation}
-R = \left( \frac{GM}{\omega_{\text{max}}^2} \right),
+R = \left( \frac{GM}{\omega_{\text{max}}^2} \right)^{1/3},
 \end{equation}
 where $M$ is the total mass of the binary.
 
@@ -345,8 +344,16 @@ For a abbr:bns system the gls:chirp-mass will be around $\SI{1.25}{\solMass}$.
 \end{figure}
 
 # ** Exercise
-#    Advanced LIGO can detect signals at a frequency around as low as $\SI{10}{\hertz}$, however the third generation Einstein Telescope will be able to make observations down to around $\SI{1}{\hertz}$. What is the increase in observation time achieved between the two detectors for a abbr:bns system?
+a) Advanced LIGO can detect signals at a frequency around as low as around $\SI{25}{\hertz}$, however the third generation Einstein Telescope will be able to make observations down to around $\SI{1}{\hertz}$. What is the increase in observation time achieved between the two detectors for a abbr:bns system?
+b) Briefly discuss the advantages of adding more detectors to the detector network
+c) A CBC signal is observed by a detector network, and the chirp-mass is determined to be $4.35\,\solMass$ from the observed waveform. Assuming that the two objects have equal mass (that is, their mass-ratio is 1), and that the highest frequency of the signal is around $\SI{20.8}{\kilo\hertz}$. What type of source is likely to have produced this signal? Why might we not expect to make an observation of this kind of event with the current network of detectors?
 
+
+a) The signal will be observable (although not necessarily detectable!) for around 87 seconds, but it will enter the ET band around 129 hours before coalescence, so ET has the potential to give several days' notice prior to the merger. In reality we probably only expect the advanced notice to be around an hour because of the length of time required to identify the signal in the data.
+
+b) Adding additional detectors both improves the sky localisation of the network (it substantially decreases the size of the plausible sky area which can contain any given source) and increases the live time of the network, by reducing the probability that no detectors are observing at any given time.
+
+c) The compactness ration is 1.44, which would imply a BBH, however the chirp-mass is very low, suggesting that the source may be a non-stellar (e.g. primordial) black hole. We're unlikely to see an event like this since the merger frequency is well above the frequency which advanced LIGO or Virgo is sensitive to.
 
 
 The amount of advance warning will depend on the strength of the abbr:bns signal, but all abbr:bns within $\SI{40}{\mega\parsec}$ should be localised an hour prior to the merger by third generation detectors cite:2018PhRvD..97l3014C.
