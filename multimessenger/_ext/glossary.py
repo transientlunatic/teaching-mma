@@ -10,6 +10,7 @@ from sphinx.domains import Domain
 from sphinx.domains import Index
 from sphinx.roles import XRefRole
 from sphinx.util.nodes import make_refnode
+from sphinx.util.docutils import SphinxDirective
 
 class GlossaryDirective(ObjectDescription):
     """A custom directive that describes a glossary entry."""
@@ -21,6 +22,7 @@ class GlossaryDirective(ObjectDescription):
         'label': directives.unchanged,
         'abbreviation': directives.unchanged,
         'abbreviationpl': directives.unchanged,
+        'symbol': directives.unchanged,
     }
 
     def handle_signature(self, sig, signode):
@@ -41,6 +43,22 @@ class GlossaryDirective(ObjectDescription):
             glossary.add_entry(self.arguments[0],
                                #label=self.options['label'],
                                **self.options)
+
+class MacroFactory(SphinxDirective):
+    """A custom directive that describes a glossary entry."""
+
+    has_content = True
+    required_arguments = 0
+
+    option_spec = {
+    }
+
+    def run(self):
+        glossary = self.env.get_domain('glossary')
+        symbols = glossary.data['symbols']
+        signode = []
+        for name, symbol in symbols.items(): signode.append(nodes.math(text=f"\def\{name.split('.')[1].replace('-','')}{{{symbol}}}"))
+        return signode
 
 
 class AbbreviationIndex(Index):
@@ -64,7 +82,7 @@ class AbbreviationIndex(Index):
                 abbreviations_r[definition] = abbreviation
                 
         for definition, abbreviation in abbreviations_r.items():
-            dispname, typ, docname, anchor = entries[f"glossary.{abbreviation.lower()}"]
+            dispname, typ, docname, anchor = entries[f"{abbreviation.lower()}"]
             dispname = f"{abbreviation}: {definition}"
             content[abbreviation].append((dispname, 0, docname, anchor, "", '', ""))
 
@@ -80,15 +98,21 @@ class GlossaryDomain(Domain):
     roles = {
         'abbr': XRefRole(),
         'abpl': XRefRole(),
+        'gls': XRefRole(),
+        'symbol': XRefRole(),
+        'mathsymbol': XRefRole()
     }
     directives = {
         'entry': GlossaryDirective,
+        'macros': MacroFactory
     }
     indices = {
         AbbreviationIndex,
     }
     initial_data = {
         "entries": [],
+        "entry": {},
+        "symbols": {},
         "abbreviation": {},
         "abbreviation-name": {},
         "abbreviation-plural": {}
@@ -105,32 +129,53 @@ class GlossaryDomain(Domain):
                      contnode):
         if typ=="abbr" or typ=="abpl":
             target = f"glossary:{target}".lower()
-
-            # for name, sig, typ, docname, anchor, prio in self.get_objects():
-            #     print(name, typ, anchor.lower(), sig)
-        
             match = [(docname, anchor, name, sig)
                      for name, sig, typ, docname, anchor, prio
                      in self.get_objects() if anchor.lower() == target.lower() ]
 
 
+        elif typ=="gls":
+            target = f"glossary:{target}".lower()
+            match = [(docname, anchor, name, sig)
+                     for name, sig, typ, docname, anchor, prio
+                     in self.get_objects() if anchor.lower() == target.lower() ]
+
+        elif typ=="symbol" or typ=="mathsymbol":
+            target = f"glossary:{target}".lower()
+            match = [(docname, anchor, name, sig)
+                     for name, sig, typ, docname, anchor, prio
+                     in self.get_objects() if anchor.lower() == target.lower() ]
+            
         else:
             return None
         
         if len(match) > 0:
             todocname = match[0][0]
             targ = match[0][1]
-
-            if typ == "abbr":
+            sig = match[0][3]
+            if typ == "symbol":
+                name = self.data['symbols'][match[0][2]]
+                contnode = nodes.Text(name)
+                return contnode
+            elif typ == "mathsymbol":
+                name = self.data['symbols'][match[0][2]]
+                contnode = nodes.math(text=name)
+                return contnode
+            elif typ == "abbr":
                 name = self.data['abbreviation-name'][match[0][2]]
+                contnode = nodes.abbreviation(text=nodes.Text(name), explanation=sig)
             elif typ == "abpl" and (match[0][2] in self.data['abbreviation-plural']):
                 name = self.data['abbreviation-plural'][match[0][2]]
+                contnode = nodes.abbreviation(text=nodes.Text(name), explanation=sig)
             elif typ == "abpl":
                 name = self.data['abbreviation-name'][match[0][2]]+"s"
+                contnode = nodes.abbreviation(text=nodes.Text(name), explanation=sig)
+            elif typ == "gls":
+                name = self.data['entry'][match[0][2]]
+                contnode = nodes.Text(name)
             else:
                 name = match[0][2]
-            sig = match[0][3]
-            contnode = nodes.abbreviation(text=nodes.Text(name), explanation=sig)
+                contnode = nodes.Text(name)
             #contnode.elements = [nodes.Text(name)]
             return make_refnode(builder, fromdocname, todocname, targ,
                                 contnode, targ)
@@ -151,12 +196,14 @@ class GlossaryDomain(Domain):
         self.data['entries'].append(
             (name, signature, "Glossary", self.env.docname, anchor, 0)
         )
-
+        self.data['entry'][name] = signature
         if "abbreviation" in kwargs:
-            self.data['abbreviation'][kwargs['abbreviation']] = signature
+            self.data['abbreviation'][name] = signature
             self.data['abbreviation-name'][name] = kwargs['abbreviation']
         if "abbreviationpl" in kwargs:
             self.data['abbreviation-plural'][name] = kwargs['abbreviationpl']
+        if "symbol" in kwargs:
+            self.data['symbols'][name] = kwargs['symbol']
 
 
 def setup(app):
