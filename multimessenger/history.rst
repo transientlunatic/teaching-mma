@@ -6,7 +6,7 @@ Multimessenger astronomy: A very brief history
 ==============================================
 
 While the discovery of GW170817 marked the beginning of :glossary:abbr:`mma` with :glossary:abpl:`gw`, it did not mark the beginning of abbr:mma as a field.
-The earliest :glossary:abbr:`mma` observations can be traced to astroparticle observations of the solar flares in the 1940s :cite:`particleastrophysicsbook`.
+The earliest :glossary:abbr:`mma` observations can be traced to astroparticle observations of the solar flares in the 1940s :cite:`2015paas.book.....S`.
 
 The observation of SN1987A, a type-II supernova in the Large Magellanic Cloud, was made first in visible light at Las Campanas, but also later in ultraviolet. Around three hours prior to the event's detection in :glossary:abbr:`em`, a number of :glossary:abbr:`hen` observatories detected a burst of antineutrinos (with around 25 particles observed across three observatories).
 The first detection of gravitational waves was made in 2015, with the observation of a :glossary:abbr:`bbh` coalescence, and just under two years later the first observation of :glossary:abpl:`gw` from a :glossary:abbr:`bns` coalescence was made, which coincided with a :glossary:abbr:`sgrb` observed by the Fermi satellite.

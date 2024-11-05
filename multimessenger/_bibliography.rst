@@ -76,7 +76,7 @@ Glossary
    :abbreviation: SN
    :abbreviationpl: SNe
 
-.. glossary:entry:: Chirp mass
+.. glossary:entry:: chirp mass
    :label: chirp-mass
    :symbol: \mathcal{M}
 

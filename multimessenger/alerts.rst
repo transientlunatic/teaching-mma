@@ -72,7 +72,7 @@ An important part of this is determining if the source of a signal was a :glossa
 To do this we need to consider two quantities: the :glossary:gls:`chirp-mass` of the system, which can be measured directly from the waveform, and the compactness of the system, which can be determined by identifying the moment that the
 system merges in the waveform.
 
-The :glossary:gls:`chirp-mass`, :glossary:mathsymbol:`chirp-mass`, can be determined if the frequency, :math:`f_{\text{GW}}`, and the frequency derivative, :math:`\dot{f}_{\text{GW}}`, with respect to time of the :glossary:abbr:`gw` are measured :cite:`Gw150914BasicPhysics`:
+The :glossary:gls:`chirp-mass`, :glossary:mathsymbol:`chirp-mass`, can be determined if the frequency, :math:`f_{\text{GW}}`, and the frequency derivative, :math:`\dot{f}_{\text{GW}}`, with respect to time of the :glossary:abbr:`gw` are measured :cite:`2017AnP...52900209A`:
 
 .. math::
    \label{eq:chirp-mass-frequency}
@@ -133,4 +133,4 @@ For a :glossary:abbr:`bns` system we expect :math:`\mathcal{R}` between around :
 .. [4]
    For a fuller discussion of the effects of spin and the orbit on the
    determination of the orbital compactness see section 4 of
-   cite:2017AnP...52900209A.
+   :cite:`2017AnP...52900209A`.

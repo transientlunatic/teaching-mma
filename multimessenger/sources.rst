@@ -18,7 +18,7 @@ Black hole coalescences
 
 	     
 :glossary:abbr:`bbh` events are not generally anticipated to be promising sources for :glossary:abbr:`em` emission, despite being the most frequently observed source of :glossary:abpl:`gw`, and the result of the most energetic events in the observed universe.
-There has, however, been speculation that under certain circumstances :glossary:abbr:`em` emission could be produced as a result of a :glossary:abbr:`bbh` coalescence :cite:`loebEmBBH,deMink2017` , partly driven by the apparent observation of gamma rays around :si:`0.4 second` following the :glossary:abbr:`gw` signal from GW150914    :cite:`FermiGw150914`  [2]_.
+There has, however, been speculation that under certain circumstances :glossary:abbr:`em` emission could be produced as a result of a :glossary:abbr:`bbh` coalescence :cite:`2016ApJ...819L..21L,2017ApJ...839L...7D` , partly driven by the apparent observation of gamma rays around :si:`0.4 second` following the :glossary:abbr:`gw` signal from GW150914 :cite:`2016ApJ...826L...6C`  [2]_.
 
 Neutron star coalescences
 -------------------------
